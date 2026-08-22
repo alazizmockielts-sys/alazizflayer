@@ -1,5 +1,5 @@
 const regions = [
-  { name: "Yangiyo‘l shahar", count: 2 },
+  { name: "Yangiyo‘l shahari", count: 2 },
   { name: "Yangiyo‘l tumani", count: 6 },
   { name: "Chinoz tumani", count: 2 },
   { name: "Quyichirchiq", count: 4 },
