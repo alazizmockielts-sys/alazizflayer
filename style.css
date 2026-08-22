@@ -267,3 +267,8 @@ body { font-family:"Montserrat",ui-sans-serif,system-ui,sans-serif; }
   .branches-head h2 { font-size:24px; }
   .branch-list { margin-top:13px; }
 }
+
+/* Filiallar barcha ekranlarda tagma-tag ko‘rinadi */
+.branch-list {
+  grid-template-columns: 1fr !important;
+}
