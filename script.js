@@ -17,10 +17,10 @@ const branches = [
   { id: 8, name: "Xalqabod", region: "Yangiyo‘l tumani", leader: "Sheraliyeva Nilufar", phone: "+998 97 016 97 98", phoneHref: "+998970169798", photo: "leader-xalqobod.png" },
   { id: 9, name: "Chinoz", region: "Chinoz tumani", leader: "Xolmatov Xudoybergan", phone: "+998 97 598 08 19", phoneHref: "+998975980819", photo: "leader-chinoz.png" },
   { id: 10, name: "Olmazor", region: "Chinoz tumani", leader: "Xasanov Suxrob", phone: "+998 93 609 55 95", phoneHref: "+998936095595", photo: "leader-olmazor.png" },
-  { id: 11, name: "Dostobod", region: "Quyi Chirchiq", leader: "Turayev Shoxriddin", phone: "+998 97 763 62 98", phoneHref: "+998977636298", photo: "leader-shoxriddin.png" },
-  { id: 12, name: "Paxtazor", region: "Quyi Chirchiq", leader: "Turayev Saidjahonxo‘ja", phone: "+998 20 004 91 04", phoneHref: "+998200049104", photo: "leader-paxtazor.png" },
-  { id: 13, name: "Mevazor", region: "Quyi Chirchiq", leader: "Abdullayeva Dinara", phone: "+998 50 570 76 50", phoneHref: "+998505707650", photo: "leader-krasin.png" },
-  { id: 14, name: "Archazor", region: "Quyi Chirchiq", leader: "Turayev Shoxriddin", phone: "+998 97 763 62 98", phoneHref: "+998977636298", photo: "leader-shoxriddin.png" },
+  { id: 11, name: "Dostobod", region: "Quyichirchiq", leader: "Turayev Shoxriddin", phone: "+998 97 763 62 98", phoneHref: "+998977636298", photo: "leader-shoxriddin.png" },
+  { id: 12, name: "Paxtazor", region: "Quyichirchiq", leader: "Turayev Saidjahonxo‘ja", phone: "+998 20 004 91 04", phoneHref: "+998200049104", photo: "leader-paxtazor.png" },
+  { id: 13, name: "Mevazor", region: "Quyichirchiq", leader: "Abdullayeva Dinara", phone: "+998 50 570 76 50", phoneHref: "+998505707650", photo: "leader-krasin.png" },
+  { id: 14, name: "Archazor", region: "Quyichirchiq", leader: "Turayev Shoxriddin", phone: "+998 97 763 62 98", phoneHref: "+998977636298", photo: "leader-shoxriddin.png" },
   { id: 15, name: "Oqqo‘rg‘on", region: "Oqqo‘rg‘on", leader: "Turayev Shoxriddin", phone: "+998 97 763 62 98", phoneHref: "+998977636298", photo: "leader-shoxriddin.png" },
 ];
 
@@ -35,11 +35,15 @@ const selector = document.querySelector("#selector");
 const modalRoot = document.querySelector("#modal-root");
 let activeRegion = null;
 
+const cacheVersion = window.AL_AZIZ_VERSION || Date.now();
+const freshImage = path => `${path}?v=${cacheVersion}`;
+document.querySelector(".background").style.backgroundImage = `url('${freshImage("hero-academy.png")}')`;
+
 function renderRegions() {
   activeRegion = null;
   selector.innerHTML = `<div class="regions-view">
     <div class="selector-head">
-      <img class="academy-logo" src="al-aziz-logo.jpg" alt="AL-AZIZ ACADEMY logosi">
+      <img class="academy-logo" src="${freshImage("al-aziz-logo.jpg")}" alt="AL-AZIZ ACADEMY logosi">
       <p>HUDUDNI TANLANG</p><h2>Filiallarimiz</h2><span>Kerakli hududni bosing</span>
     </div>
     <div class="region-list">${regions.map((region, index) => `<button data-region="${region.name}">
@@ -74,7 +78,7 @@ function openBranch(id) {
   modalRoot.innerHTML = `<div class="modal-backdrop">
     <section class="branch-modal" role="dialog" aria-modal="true" aria-labelledby="branch-name">
       <button class="modal-close" aria-label="Yopish">${icons.close}</button>
-      <div class="leader-photo" style="background-image:linear-gradient(0deg,rgba(3,20,36,.96),rgba(3,20,36,.08) 65%),url('${branch.photo}')">
+      <div class="leader-photo" style="background-image:linear-gradient(0deg,rgba(3,20,36,.96),rgba(3,20,36,.08) 65%),url('${freshImage(branch.photo)}')">
         <span class="branch-badge">${branch.name} filiali</span>
         <div class="leader-name"><small>FILIAL RAHBARI</small><h2>${branch.leader}</h2></div>
       </div>

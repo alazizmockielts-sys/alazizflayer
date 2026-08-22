@@ -9,7 +9,6 @@
   <meta http-equiv="Expires" content="0">
   <title>Al-Aziz Academy Filiallari</title>
   <link rel="icon" href="al-aziz-logo.jpg">
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="app-shell">
@@ -20,6 +19,17 @@
     </section>
     <div id="modal-root"></div>
   </main>
-  <script src="script.js"></script>
+  <script>
+    window.AL_AZIZ_VERSION = Date.now();
+
+    const style = document.createElement("link");
+    style.rel = "stylesheet";
+    style.href = "style.css?v=" + window.AL_AZIZ_VERSION;
+    document.head.appendChild(style);
+
+    const script = document.createElement("script");
+    script.src = "script.js?v=" + window.AL_AZIZ_VERSION;
+    document.body.appendChild(script);
+  </script>
 </body>
 </html>
