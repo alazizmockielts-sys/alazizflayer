@@ -7,7 +7,7 @@ const regions = [
 ];
 
 const branches = [
-  { id: 1, name: "Kasblar", region: "Yangiyo‘l shahar", leader: "Ortiqova Nigora", phone: "+998 93 470 13 32", phoneHref: "+998934701332", photo: "leader-kasblar.png" },
+  { id: 1, name: "Kasblar markazi", region: "Yangiyo‘l shahar", leader: "Ortiqova Nigora", phone: "+998 93 470 13 32", phoneHref: "+998934701332", photo: "leader-kasblar.png" },
   { id: 2, name: "Navruz", region: "Yangiyo‘l shahar", leader: "Xudoyberganova Iroda", phone: "+998 99 408 49 94", phoneHref: "+998994084994", photo: "leader-kids2.png" },
   { id: 3, name: "Niyozbosh", region: "Yangiyo‘l tumani", leader: "Shermaxamatov Anvar", phone: "+998 88 545 04 11", phoneHref: "+998885450411", photo: "leader-niyozbosh.png" },
   { id: 4, name: "Gulbahor", region: "Yangiyo‘l tumani", leader: "Davlatov Doston", phone: "+998 20 004 91 04", phoneHref: "+998200049104", photo: "leader-gulbahor.png" },
